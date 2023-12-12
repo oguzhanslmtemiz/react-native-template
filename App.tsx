@@ -25,6 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import './global.css';
+import TailwindTest from './src/TailwindTest';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -32,7 +35,8 @@ type SectionProps = PropsWithChildren<{
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
+    <View className="hidden">
+      <TailwindTest />
       <Text
         style={[
           styles.sectionTitle,
